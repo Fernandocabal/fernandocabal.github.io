@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background: #e7e9f5;
+}
+
+#contenedor_principal{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.contenido_inicio {
+    padding-left: 40px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.perfil{
+    position: relative;
+}
+/* Boton para desplegar la barra lateral */
+.perfil i{
+    position: absolute;
+    color: #1b1a1a;
+    left: 1%;
+    top: 7%;
+    cursor: pointer;
+}
+/* Fin de boton para desplegar la barra lateral */
+.perfil img {
+    margin-top: 30px;
+    width: 170px;
+    height: auto;
+    border-color: red;
+    border-style: outset;
+    border-radius: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Seccion Barra lateral */
+#hambur{
+    font-size: 300%;
+    z-index: 1;
+}
+/* Por defecto la barra esta oculta */
+.barralateral{
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform .4s;
+    pointer-events: none;
+    transform: translateX(-550px);
+
+}
+.cuerpo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; 
+    pointer-events: none;
+    opacity: 0;
+    transition: all .5s;
+}
+.cuerpo2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; 
+    opacity: 0;
+    transition: all .5s;
+    z-index: 2;
+}
+
+/* Mostramos la barra lateral */
+.barralateral.active{
+    transform: translateX(0%);
+    pointer-events: all;
+    transition: transform .6s;
+    z-index: 2;
+}
+.titulo_barra{
+    position: absolute;
+    left: 4%;
+    font-size: 120%;
+}
+.lateralx{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8%;  
+    /* border: 1px solid red;   */
+}
+.lateralx #lateral-cerrar{
+    font-size: 40px;
+    position: sticky;
+    left: 90%;
+    top: 0;
+    cursor: pointer;
+}
+.contenido_inicio.show{
+    filter: blur(5px);
+    transition: all .5s;
+}
+.cuerpo.show{
+    pointer-events: all;
+    opacity: 1;
+    transition: all .5s;
+    z-index: 1;
+}
+/* Seccion de redes sociales dentro de barra lateral */
+.redes{
+    margin-top: 2%;
+    left: 3%;
+    padding: 1%;
+    width: 25%;
+    height: 85%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* border: 1px solid red; */
+}
+.redes a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 10%;
+    /* border: 1px solid red; */
+    text-decoration: none;
+}
+.redes i{
+    border-radius: 8px;
+    font-size: 400%;
+}
+#facebook{
+    background-color: #3b5998;
+    color: #fff; 
+}
+#instagram{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    color: #fff;
+}
+#confi{
+    color: #1b1a1a; 
+}
+.red{
+    position: absolute;
+    bottom: 1%;
+}
+
+
+/* Fin de seccion Barra  lateral*/
+.contenido_inicio i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.contenido_inicio ul {
+    margin-top: 20px;
+}
+
+.contenido_inicio ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 30px;
+    list-style: none;
+}
+
+.contenido_inicio ul li a {
+    color: #1b1a1a;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all .4s ease;
+    border-color: rgba(0, 0, 0, .1);
+    border-style: outset;
+}
+
+.contenido_inicio ul li a:hover {
+    color: #f5efef;
+    background: #00af9c;
+}
+
+.barrainf {
+    display: none;
+}
+.ubicaciones{
+   display: none;
+}
+@keyframes pulse{
+    0%{
+        box-shadow: #00af9c 0 0 0 0;
+    }
+    75%{
+        box-shadow: #00af9b00 0 0 0 16px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 768px) {
+    .perfil img {
+        margin-top: 20px;
+        width: 100px;
+        height: auto;
+    }
+    .contenido_inicio .tex{
+        font-size: 30px;
+    }
+    .contenido_inicio {
+        top: 4%;
+        left: 0px;
+        padding-left: 0px;
+    }
+    .contenido_inicio.active{
+        filter: blur(4px);
+    }
+    /* Seccion barra lateral */
+    .barralateral{
+        width: 50%;
+    }
+    .titulo_barra{
+        font-size: 120%;
+    }
+    .redes a{
+        width: 60%;
+        height: 8%;
+    }
+    .redes{
+        left: 5%;
+    }
+    /* Seccion barra inferior */
+    .barrainf {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .barrainf #maps {
+        cursor: pointer;
+        height: 20%;
+        width: 20%;
+    }
+    /* Seccion caja de ubicaciones */
+    .ubicaciones{
+       background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .5s;
+    }
+    .ubicaciones.active{
+        opacity: 1;
+        transition: opacity .2s;
+        pointer-events: all;
+        z-index: 1;
+        
+    }
+    .contenedor_ubicaciones{
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, .5);
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        width: 280px;
+        height: 250px;
+        opacity: 0;
+        transition: opacity .2s;
+       
+    }
+    .contenedor_ubicaciones.active{
+        opacity: 1;
+        transition: opacity .5s .2s;
+        z-index: 2;
+    }
+    .btn-cerrar{
+        font-size: 35px;
+        line-height: 35px;
+        display: block;
+        margin-left: 85%;
+        color: #bbbbbb;
+        cursor: pointer;
+    }
+    .ubicaciones ul{
+        list-style-type: none;
+    }
+    .ubicaciones li{
+        height: 25px;
+        min-width: 30px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 28px;
+        margin: 5px;
+        padding: 10px;
+    }
+    .ubicaciones a{
+        text-decoration: none; 
+        color: #3369E8;
+    }
+}
+
+
+/* Modificaciones adicionales Pablo*/
+
+.contenedor-botones {
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.botones {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.contenido_inicio ul li {
+    margin-left: 0px;
+}
